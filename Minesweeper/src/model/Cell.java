@@ -2,9 +2,9 @@ package model;
 
 public abstract class Cell {
     
-    protected boolean discovered;
-    protected boolean flagged;
-    
+    protected boolean discovered = false;
+    protected boolean flagged  = false;
+    protected Coordenate coord;
     
     public abstract boolean isMine();
     
@@ -24,6 +24,7 @@ public abstract class Cell {
     public boolean isDiscovered(){
         return this.discovered;
     }
+    
     
     public abstract void discover();
    

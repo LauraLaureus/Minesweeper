@@ -17,6 +17,12 @@ public class Minesweeper {
         */
     }
 
+    private static void pruebaMinas(){
+    
+        for (Object col : col) {
+            
+        }
+    }
    
     
 }
