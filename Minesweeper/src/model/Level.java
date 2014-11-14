@@ -2,9 +2,9 @@ package model;
 
 public class Level {
 
-    final static int BASIC = 0;
-    final static int MEDIUM = 1;
-    final static int EXPERT = 2;
+    public final static int BASIC = 0;
+    public final static int MEDIUM = 1;
+    public final static int EXPERT = 2;
 
     private final int level;
 

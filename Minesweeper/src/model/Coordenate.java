@@ -1,6 +1,6 @@
 package model;
 
-public class Coordenate {
+public class Coordenate implements Comparable{
 
     private final int row;
     private final int column;
@@ -39,6 +39,13 @@ public class Coordenate {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if ( !(o instanceof Coordenate)) return -1;
+        
+        return new CoordenateComparator().compare(this, (Coordenate) o);
     }
 
     

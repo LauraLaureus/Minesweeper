@@ -1,28 +1,39 @@
 package minesweeper;
 
+import Test.Test;
+import model.Level;
+import Presenter.modelInterface.MineCellCoordenatesCreator;
+import java.util.ArrayList;
+import model.Coordenate;
 
-
-/**
- *
- * @author Laura
- */
 public class Minesweeper {
 
     public static void main(String[] args) {
+    
+        Test randomMineGeneratorTest = new Test() {
+
+            
+            @Override
+            public void execute() {
+                Level basic = new Level(Level.BASIC);
+                ArrayList<Coordenate> returned = 
+                        MineCellCoordenatesCreator.createCorrdenates(basic);
+                
+                int i = 0;
+                for (Coordenate coord : returned) {
+                    System.out.println( "Coordenadas:" +
+                            "X: " +  coord.getRow() +
+                            " Y: " + coord.getColumn());
+                }
+            }
+        };
+       
+        randomMineGeneratorTest.execute();
         
        
-        /*TODO
-        Se llama a GameFactory para que gener todos los datos de la partida.
-        Se llama al procedimiento jugar.
-        */
     }
 
-    private static void pruebaMinas(){
     
-        for (Object col : col) {
-            
-        }
-    }
    
     
 }
