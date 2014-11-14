@@ -1,15 +1,14 @@
 package model;
 
-public class MineCell extends Cell {
+public class NumericCell extends Cell{
 
     @Override
     public boolean isMine() {
-        return true;
+        return false;
     }
 
     @Override
     public void discover() {
-        //TODO llamar al evento FINDEPARTIDA.
     }
-
+    
 }

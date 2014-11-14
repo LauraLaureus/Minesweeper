@@ -2,13 +2,31 @@ package model;
 
 public abstract class Cell {
     
-    protected boolean locked;
+    protected boolean discovered;
     protected boolean flagged;
     
+    
     public abstract boolean isMine();
-    public abstract boolean islocked();
-    public abstract void flag();
-    public abstract void unflag();
+    
+    
+    public boolean isFlagged(){
+        return this.flagged;
+    }
+    
+    public void flag(){
+        this.flagged = true;
+    }
+    
+    public  void unflag(){
+        this.flagged = false;
+    }
+    
+    public boolean isDiscovered(){
+        return this.discovered;
+    }
+    
+    public abstract void discover();
+   
     
     
 }
