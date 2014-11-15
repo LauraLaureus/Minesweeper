@@ -15,7 +15,7 @@ public class CellField {
         return lvl;
     }
 
-    public Cell[][] getField() {
+    public Cell[][] getCellMatrix() {
         return field;
     }
 

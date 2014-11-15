@@ -1,9 +1,12 @@
 package model;
 
 public class NumericCell extends Cell{
+    
+    private final int distance;
 
-    public NumericCell(Coordenate coord){
+    public NumericCell(Coordenate coord, int distance){
         this.coord = coord;
+        this.distance = distance;
     }
     @Override
     public boolean isMine() {
@@ -13,5 +16,11 @@ public class NumericCell extends Cell{
     @Override
     public void discover() {
     }
+
+    public int getDistance() {
+        return distance;
+    }
+
+    
     
 }
