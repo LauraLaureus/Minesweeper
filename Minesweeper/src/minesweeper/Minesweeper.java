@@ -3,7 +3,7 @@ package minesweeper;
 import Presenter.modelInterface.CellFieldCreator;
 import Test.Test;
 import model.Level;
-import Presenter.modelInterface.MineCellCoordenatesCreator;
+import Presenter.modelInterface.MineCellCreator;
 import java.util.ArrayList;
 import model.Cell;
 import model.CellField;
@@ -14,23 +14,7 @@ public class Minesweeper {
 
     public static void main(String[] args) {
     
-        Test randomMineGeneratorTest = new Test() {
-
-            
-            @Override
-            public void execute() {
-                Level basic = new Level(Level.BASIC);
-                ArrayList<Coordenate> returned = 
-                        MineCellCoordenatesCreator.createCorrdenates(basic);
-                
-                int i = 0;
-                for (Coordenate coord : returned) {
-                    System.out.println( "Coordenadas:" +
-                            "X: " +  coord.getRow() +
-                            " Y: " + coord.getColumn());
-                }
-            }
-        };
+        
        
         //randomMineGeneratorTest.execute(); //SUCESS 
         
@@ -38,24 +22,24 @@ public class Minesweeper {
 
             @Override
             public void execute() {
-
                 CellFieldCreator creator = new CellFieldCreator(
-                    new Level(Level.BASIC));
-                CellField field = creator.getField();
-                Cell[][] cellMatrix = field.getCellMatrix();
+                new Level(Level.BASIC));
                 
-                for (Cell[] cellMatrixRow : cellMatrix) {
-                    for (Cell cell : cellMatrixRow) {
-                        if (cell.isMine())
-                            System.out.print(true + " ");
+                Cell[][] field = creator.getField().getCellMatrix();
+                
+                for (int i = 0; i < field.length; i++) {
+                    for (int j = 0; j < field[0].length; j++) {
+                        
+                        if(field[i][j].isMine())
+                            System.out.print("M");
                         else
-                            System.out.println(((NumericCell)cell).getDistance()
-                             + " ");
+                            System.out.print(((NumericCell)field[i][j]).getDistance());
+                        
                     }
+                    
                     System.out.println("");
                 }
-                
-            }
+            }    
         };
         
         distanceAndMineDrawing.execute();

@@ -32,7 +32,6 @@ public class NumericCellCreator {
             i++;
         }
 
-        //Collections.sort(builtCells, new CoordenateComparator());
     }
 
     
