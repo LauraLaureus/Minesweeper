@@ -3,19 +3,14 @@ package minesweeper;
 import Presenter.modelInterface.CellFieldCreator;
 import Test.Test;
 import model.Level;
-import Presenter.modelInterface.MineCellCreator;
-import java.util.ArrayList;
 import model.Cell;
-import model.CellField;
-import model.Coordenate;
 import model.NumericCell;
 
 public class Minesweeper {
 
     public static void main(String[] args) {
-    
-        
-       
+           
+      
         //randomMineGeneratorTest.execute(); //SUCESS 
         
         Test distanceAndMineDrawing = new Test() {
