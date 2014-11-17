@@ -1,68 +1,11 @@
 package model;
 
-public class Level {
+public interface Level {
 
-    public final static int BASIC = 0;
-    public final static int MEDIUM = 1;
-    public final static int EXPERT = 2;
+    public int getMines();
 
-    private final int level;
+    public int getRows();
 
-    public Level(int level) {
-        this.level = level;
-    }
-
-    public int getMines() {
-        int mines = 0;
-
-        switch (level) {
-            case Level.BASIC:
-                mines = 10;
-                break;
-            case Level.MEDIUM:
-                mines = 40;
-                break;
-            case Level.EXPERT:
-                mines = 99;
-                break;
-        }
-        return mines;
-    }
-
-    public int getRows() {
-
-        int rows = 0;
-        switch (level) {
-            case Level.BASIC:
-                rows = 8;
-                break;
-            case Level.MEDIUM:
-                rows = 16;
-                break;
-            case Level.EXPERT:
-                rows = 16;
-                break;
-        }
-
-        return rows;
-    }
-
-    public int getColumns() {
-        int columns = 0;
-        switch (level) {
-            case Level.BASIC:
-                columns = 8;
-                break;
-            case Level.MEDIUM:
-                columns = 16;
-                break;
-            case Level.EXPERT:
-                columns = 30;
-                break;
-        }
-
-        return columns;
-
-    }
+    public int getColumns();
 
 }
