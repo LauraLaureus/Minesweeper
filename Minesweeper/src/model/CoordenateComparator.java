@@ -6,21 +6,37 @@ public class CoordenateComparator implements Comparator<Coordenate> {
 
     @Override
     public int compare(Coordenate o1, Coordenate o2) {
-        Coordenate origin = new Coordenate(0,0);
-        return compareFrom(origin,o1,o2);
+
+        int compareRow = compareRow(o1, o2);
+
+        if (Math.abs(compareRow) == 1) {
+            return compareRow;
+        } else {
+            return compareColumn(o1, o2);
+        }
     }
-    
-    public int compareFrom(Coordenate origin, Coordenate o1, Coordenate o2){
-        double vector1x = o1.getRow() - origin.getRow();
-        double vector1y = o1.getColumn() - origin.getColumn();
-        
-        double vector1Module = Math.sqrt(vector1x*vector1x + vector1y*vector1y);
-        
-        double vector2x = o2.getRow() - origin.getRow();
-        double vector2y = o2.getColumn() - origin.getColumn();
-        
-        double vector2Module = Math.sqrt(vector2x*vector2x + vector2y*vector2y);
-        
-        return Double.compare(vector1Module, vector2Module);
+
+    private int compareRow(Coordenate o1, Coordenate o2) {
+        int diffRow = o1.getRow() - o2.getRow();
+        if (diffRow < 0) {
+            return -1;
+        } else if (diffRow > 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+
     }
+
+    private int compareColumn(Coordenate o1, Coordenate o2) {
+        int diffColumn = o1.getColumn() - o2.getColumn();
+        if (diffColumn < 0) {
+            return -1;
+        } else if (diffColumn > 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
 }
