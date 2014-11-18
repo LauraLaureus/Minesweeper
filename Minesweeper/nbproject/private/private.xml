@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Laura/Documents/GitHub/Minsweeper/Minesweeper/src/presenter/modelInterface/NumericCellCreator.java</file>
+            <file>file:/C:/Users/Laura/Documents/GitHub/Minsweeper/Minesweeper/src/model/CoordenateComparator.java</file>
             <file>file:/C:/Users/Laura/Documents/GitHub/Minsweeper/Minesweeper/src/minesweeper/Minesweeper.java</file>
-            <file>file:/C:/Users/Laura/Documents/GitHub/Minsweeper/Minesweeper/src/model/NumericCell.java</file>
-            <file>file:/C:/Users/Laura/Documents/GitHub/Minsweeper/Minesweeper/src/model/CellField.java</file>
-            <file>file:/C:/Users/Laura/Documents/GitHub/Minsweeper/Minesweeper/src/presenter/modelInterface/CellFieldCreator.java</file>
+            <file>file:/C:/Users/Laura/Documents/GitHub/Minsweeper/Minesweeper/src/presenter/modelInterface/MineCellCreator.java</file>
+            <file>file:/C:/Users/Laura/Documents/GitHub/Minsweeper/Minesweeper/src/Test/CellFieldCreatorTest.java</file>
         </group>
     </open-files>
 </project-private>

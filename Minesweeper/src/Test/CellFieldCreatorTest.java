@@ -5,7 +5,7 @@ import model.BasicLevel;
 import model.Cell;
 import model.NumericCell;
 
-public class mineDistanceTest implements Test {
+public class CellFieldCreatorTest implements Test {
 
     @Override
     public void execute() {

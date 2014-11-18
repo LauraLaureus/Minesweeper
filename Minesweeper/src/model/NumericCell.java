@@ -2,7 +2,7 @@ package model;
 
 public class NumericCell extends Cell{
     
-    private final int distance;
+    private  int distance;
 
     public NumericCell(Coordenate coord, int distance){
         this.coord = coord;
@@ -19,6 +19,10 @@ public class NumericCell extends Cell{
 
     public int getDistance() {
         return distance;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
     }
 
     

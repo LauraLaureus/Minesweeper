@@ -17,7 +17,7 @@ public class CoordenateComparatorTest implements Test {
 
         ArrayList<Coordenate> example = new ArrayList<>();
         
-        int[][] examples = {{7,7},{1,1},{5,5},{6,6},{3,3},{2,3},{7,5},{4,3},{2,5},{2,2}};
+        int[][] examples = {{7,7},{6,6},{5,5},{4,4},{3,3},{2,2},{1,1},{0,0},{8,8},{9,9}};
         
         for (int i = 0; i < examples.length; i++) {
             example.add(new Coordenate(examples[i][0], examples[i][1]));

@@ -1,14 +1,14 @@
 package minesweeper;
 
-import Test.CoordenateComparatorTest;
+import Test.CellFieldCreatorTest;
 
 
 public class Minesweeper {
 
     public static void main(String[] args) {
-
-        CoordenateComparatorTest coordCompTst = new CoordenateComparatorTest();
-        coordCompTst.execute();
+               
+        CellFieldCreatorTest creatorTest = new CellFieldCreatorTest();
+        creatorTest.execute();
     }
 
 }

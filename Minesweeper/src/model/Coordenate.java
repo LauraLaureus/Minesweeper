@@ -48,5 +48,9 @@ public class Coordenate implements Comparable{
         return new CoordenateComparator().compare(this, (Coordenate) o);
     }
 
-    
+    public boolean isValid(){
+        
+        if(row < 0 || column < 0 ) return false;
+        else return true;
+    }
 }
