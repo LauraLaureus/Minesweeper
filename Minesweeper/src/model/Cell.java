@@ -1,33 +1,44 @@
 package model;
 
-public abstract class Cell {
+import java.util.ArrayList;
+import static model.Status.*;
+
+public class Cell {
     
-    protected boolean discovered = false;
-    protected boolean flagged  = false;
-    protected Coordenate coord;
+    private ArrayList<Cell> neighbours;
+    private Mine mine;
+    private Status status;
+    private int minesSurroundingMe;
+
     
-    public abstract boolean isMine();
-    
-    
-    public boolean isFlagged(){
-        return this.flagged;
+    public Cell(ArrayList<Cell> neighbours, Mine mine) {
+        this.neighbours = neighbours;
+        this.mine = mine;
+        this.status = NONE;
+        this.minesSurroundingMe = mineDetector();
     }
     
-    public void flag(){
-        this.flagged = true;
+    public boolean hasMine(){
+        return mine != null;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    private int mineDetector() {
+        int result = 0;
+        for (Cell neighbour : neighbours) {
+            if(neighbour.hasMine()) result++;          
+        }
+        return result;
     }
     
-    public  void unflag(){
-        this.flagged = false;
-    }
     
-    public boolean isDiscovered(){
-        return this.discovered;
-    }
-    
-    
-    public abstract void discover();
-   
     
     
 }

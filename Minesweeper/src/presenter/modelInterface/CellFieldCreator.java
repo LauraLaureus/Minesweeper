@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import model.CellField;
 import model.Coordenate;
 import model.Level;
-import model.MineCell;
+import model.Mine;
 import presenter.modelInterface.NumericCellCreator;
 
 public class CellFieldCreator {

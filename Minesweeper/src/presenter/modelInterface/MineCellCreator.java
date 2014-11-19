@@ -7,7 +7,7 @@ import model.CellField;
 import model.Coordenate;
 import model.CoordenateComparator;
 import model.Level;
-import model.MineCell;
+import model.Mine;
 
 public class MineCellCreator {
 
@@ -25,7 +25,7 @@ public class MineCellCreator {
         this.generateCoordenates();
         
         for (Coordenate coord : coords) {
-            field.addCellAt(new MineCell(coord),coord);
+            field.addCellAt(new Mine(coord),coord);
         }
     }
     
