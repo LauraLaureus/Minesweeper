@@ -27,6 +27,11 @@ public class CellField {
         return field[coord.getRow()][coord.getColumn()];
     }
 
+    public Cell[][] getField() {
+        return field;
+    }
+    
+
     private void fillTheField() {
         generateAllCells();
         setMines();
@@ -75,8 +80,10 @@ public class CellField {
         ArrayList<Cell> westNeighbours;
         Coordenate target;
 
-        for (int row = 0; row < lvl.getRows(); row++) {
-            for (int column = 0; column < lvl.getColumns(); column++) {
+       
+        for (int row = 0; row < field.length ; row++) {
+            for (int column = 0; column < field[0].length; column++) {
+                
                 target = new Coordenate(row, column);
                 northNeighbours = presentNorthNeighbours(target);
                 eastNeighbours = presentEastNeighbours(target);
@@ -94,12 +101,13 @@ public class CellField {
     private ArrayList<Cell> presentNorthNeighbours(Coordenate target) {
         ArrayList<Cell> northNeighbours = new ArrayList<>();
 
+        if (target.getRow() ==  0) return northNeighbours;
         if (target.getColumn() == (lvl.getColumns() - 1)) {
-            northNeighbours.add(field[target.getRow() + 1][target.getColumn()]);
+            northNeighbours.add(field[target.getRow() - 1][target.getColumn()]);
 
         } else if (target.getRow() != 0) {
-            northNeighbours.add(field[target.getRow() + 1][target.getColumn()]);
-            northNeighbours.add(field[target.getRow() + 1][target.getColumn() + 1]);
+            northNeighbours.add(field[target.getRow() - 1][target.getColumn()]);
+            northNeighbours.add(field[target.getRow() - 1][target.getColumn() + 1]);
         }
 
         return northNeighbours;
@@ -109,6 +117,8 @@ public class CellField {
     private ArrayList<Cell> presentEastNeighbours(Coordenate target) {
         ArrayList<Cell> eastNeighbours = new ArrayList<>();
 
+        if(target.getColumn() == (lvl.getColumns() - 1)) 
+            return eastNeighbours;
         if (target.getRow() == (lvl.getRows() - 1)) {
             eastNeighbours.add(field[target.getRow()][target.getColumn() + 1]);
         } else if (target.getColumn() != (lvl.getColumns() - 1)) {
@@ -121,9 +131,10 @@ public class CellField {
     private ArrayList<Cell> presentSouthNeighbours(Coordenate target) {
         ArrayList<Cell> southNeighbours = new ArrayList<>();
 
+        if (target.getRow() == (lvl.getRows() - 1)) return southNeighbours;
         if (target.getColumn() == 0) {
             southNeighbours.add(field[target.getRow() + 1][target.getColumn()]);
-        } else if (target.getRow() != (lvl.getRows() - 1)) {
+        } else  {
             southNeighbours.add(field[target.getRow() + 1][target.getColumn()]);
             southNeighbours.add(field[target.getRow() + 1][target.getColumn()-1]);
         }
@@ -133,7 +144,8 @@ public class CellField {
     private ArrayList<Cell> presentWestNeighbours(Coordenate target) {
         ArrayList<Cell> westNeighbours = new ArrayList<>();
         
-        if (target.getRow()== 0) {
+        if (target.getColumn() == 0) return westNeighbours;
+        if (target.getRow() == 0)  {
             westNeighbours.add(field[target.getRow()][target.getColumn()-1]);
         } else if (target.getRow() != (lvl.getRows() - 1)) {
             westNeighbours.add(field[target.getRow()-1][target.getColumn()-1]);

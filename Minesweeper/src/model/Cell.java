@@ -28,7 +28,7 @@ public class Cell {
 
     public void setNeighbours(ArrayList<Cell> neighbours) {
         this.neighbours = neighbours;
-        this.mineDetector();
+        this.minesSurroundingMe = mineDetector();
     }
 
     public void setMine() {
@@ -45,5 +45,11 @@ public class Cell {
         }
         return result;
     }
+
+    public int getMinesSurroundingMe() {
+        return minesSurroundingMe;
+    }
+    
+    
 
 }
